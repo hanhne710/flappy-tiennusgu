@@ -1,27 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
-canvas {
-    border-radius: 10px;
-    display: block;
-    margin: 50px auto;
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-image: url('assets/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+canvas {
+    border-radius: 10px;
     z-index: 1;
 }
+
 
 #end{
     background-color: pink;
     display: none;
-    margin: 50px auto;
     width: 200px;
     padding: 20px;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
     z-index: 1000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #score-display {

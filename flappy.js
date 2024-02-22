@@ -4,18 +4,18 @@ const ctx = canvas.getContext("2d");
 const gameContainer = document.getElementById('container');
 
 const tienNuIMG = new Image();
-tienNuIMG.src = 'assets/tien-nu-sgu.png';
+tienNuIMG.src = './assets/assets/tien-nu-sgu.png';
 
-const FLAP_SPEED = -5;
+const FLAP_SPEED = -3;
 const BIRD_WIDTH = 40;
 const BIRD_HEIGHT = 30;
 const PIPE_WIDTH = 50;
-const PIPE_GAP = 125;
+const PIPE_GAP = 105;
 
 let birdX = 50;
 let birdY = 50;
 let birdVelocity = 0;
-let birdAcceleration = 0.1;
+let birdAcceleration = 0.05;
 
 let pipeX = 400;
 let pipeY = canvas.height - 200;

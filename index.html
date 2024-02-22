@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Tiên nữ SGU</title>
+    <title>Flappy Bird - Hero</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div id="end">
-        <h1>GÀ!!!!!!</h1>
-        <p> Điểm: <span id="end-score"></span></p>
-        <p> Cao nhất: <span id="best-score"></span></p>
-        <button id="restart-button">Chơi lại</button>
+<body style="background-image: url('./assets/assets/background.jpg');
+background-size: cover;
+background-position: center;">
+    <div class="hero-container" style="text-align: center; margin-top: 15%;">
+        <h1 style="color:brown">Game tiên nữ SGU</h1>
+        <button onclick="startGame()">Chơi thui</button>
     </div>
-    <div id="container">
-        <canvas id="game-canvas" width="400" height="600"></canvas>
-        <div id="score-display" style="color:black">0</div>
-    </div>
-    <script src="flappy.js"></script>
+    <script>
+        function startGame() {
+            window.location.href = "game.html";
+        }
+    </script>
 </body>
 </html>
