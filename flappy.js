@@ -130,33 +130,39 @@ const canvas = document.getElementById('game-canvas');
             showEndMenu();
         }
 
-        function loop() {
+        function loop(timestamp) {
+            let progress = timestamp - lastRender;
+        
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+        
             // Draw Flappy Bird
             ctx.drawImage(tienNuIMG, birdX, birdY);
-
+        
             ctx.fillStyle = '#D350D6';
             ctx.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
             ctx.fillRect(pipeX, pipeY + PIPE_GAP, PIPE_WIDTH, canvas.height - pipeY);
-
+        
             if (collisionCheck()) {
                 endGame();
                 return;
             }
-
+        
             pipeX -= 1.5;
-
+        
             if (pipeX < -50) {
                 pipeX = 400;
                 pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
             }
-
+        
             birdVelocity += birdAcceleration;
             birdY += birdVelocity;
-
-            increaseScore()
+        
+            increaseScore();
+            
+            lastRender = timestamp;
             requestAnimationFrame(loop);
         }
-
-        loop();
+        
+        let lastRender = 0;
+        requestAnimationFrame(loop);
+        
